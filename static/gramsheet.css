@@ -1,0 +1,12 @@
+header {
+    color: navy;
+    font-size: 150px;
+}
+
+div {
+    color: navy;
+}
+
+* {
+    background-color: grey;
+}
