@@ -1,62 +1,70 @@
-window.onload = initAll;
+window.onload = function() {
+    var table = document.getElementById("bingoTable");
+    var reloadLink = document.getElementById("reloadLink");
 
-function initAll() {
-    document.getElementById("reload").onclick = anotherCard;
-    newCard();
-}
+    // Set up click listener for reload link
+    reloadLink.addEventListener("click", function(event) {
+        event.preventDefault();
+        resetBoard(table);
+        generateNumbers(table);
+    });
 
-function newCard() {
-    for (var i = 0; i < 24; i++) {
-        setSquare(i);
-    }
-}
+    // Generate initial board
+    generateNumbers(table);
+};
 
-var colPlace = new Array(0, 0, 0, 0, 0, // B
-    1, 1, 1, 1, 1, // I
-    2, 2, 2, 2, // N
-    3, 3, 3, 3, 3, // G
-    4, 4, 4, 4, 4); // O
+function generateNumbers(table) {
+    // Set up variables for tracking generated numbers and used squares
+    var numbers = [];
+    var usedSquares = {};
 
-var usedNums = new Array(76);
-
-function setSquare(thisSquare) {
-    var currSquare = "square" + thisSquare;
-    var colBasis = colPlace[thisSquare] * 15;
-    var newNum;
-
-    do {
-        newNum = colBasis + getNewNum() + 1;
-    } while (usedNums[newNum]);
-
-    usedNums[newNum] = true;
-    document.getElementById(currSquare).innerHTML = newNum;
-    document.getElementById(currSquare).className = "";
-    document.getElementById(currSquare).onmousedown = toggleColor;
-}
-
-function getNewNum() {
-    return Math.floor(Math.random() * 15);
-}
-
-function anotherCard() {
-    for (var i = 1; i < usedNums.length; i++) {
-        usedNums[i] = false;
+    // Generate random numbers and populate board
+    for (var i = 1; i <= 75; i++) {
+        numbers.push(i);
     }
 
-    newCard();
-    return false;
-}
+    for (var row = 0; row < 5; row++) {
+        var tr = table.insertRow(row);
 
-function toggleColor(evt) {
-    if (evt.target) {
-        var thisSquare = evt.target; // most browsers
-    } else {
-        var thisSquare = window.event.srcElement; // Windows Internet Explorer
+        for (var col = 0; col < 5; col++) {
+            var td = tr.insertCell(col);
+
+            // Generate random index within remaining numbers
+            var index = Math.floor(Math.random() * (numbers.length - 1));
+
+            // Get number from array and remove it
+            var number = numbers.splice(index, 1)[0];
+
+            // Set square text and class
+            td.innerHTML = number;
+            td.className = "square";
+
+            // Store number in used squares object
+            usedSquares[number] = true;
+
+            // Add click listener to toggle square class
+            td.addEventListener("click", function() {
+                if (this.className === "square") {
+                    this.className = "square picked";
+                } else {
+                    this.className = "square";
+                }
+            });
+        }
     }
 
-    if (thisSquare.className == "") {
-        thisSquare.className = "pickedBG";
-    } else {
-        thisSquare.className = "";
+    // Set "Free" square
+    var freeSquare = table.rows[2].cells[2];
+    freeSquare.innerHTML = "Free";
+    freeSquare.className = "square free";
+
+    // Store used squares in table data attribute
+    table.dataset.usedSquares = JSON.stringify(usedSquares);
+}
+
+function resetBoard(table) {
+    // Remove existing rows from table
+    while (table.rows.length > 0) {
+        table.deleteRow(0);
     }
 }

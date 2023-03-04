@@ -1,28 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>SignIn</title>
-        <link rel="stylesheet" href="/static/signincss.css">
-        <script defer src="signin-page.js"></script>
-      </head>
-      <body>
-        <main id="main-holder">
-          <h1 id="signin-header">SignIn</h1>
 
-          <div id="signin-error-msg-holder">
-            <p id="signin-error-msg-match"> Sorry! Please make sure the passwords you wrote match. </p>
-            <p id="signin-error-msg-taken"> Sorry! The username you chose is already taken. </p>
-          </div>
-          
-          <form id="signin-form">
-            <input type="text" name="username" id="username-field" class="signin-form-field" placeholder="Username">
-            <input type="password" name="password" id="password-field" class="signin-form-field" placeholder="Password">
-            <input type="password_conf" name="password_conf" id="password_conf-field" class="signin-form-field" placeholder="Confirm Password">
-            <input type="submit" value="Signin" id="signin-form-submit">
-          </form>
-        
-        </main>
-      </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignIn</title>
+    <link rel="stylesheet" href="/static/signincss.css">
+    <script defer src="signin-page.js"></script>
+</head>
+
+<body>
+    <main id="main-holder">
+        <h1 id="signin-header">SignIn</h1>
+        <form method="POST" action="">
+          {{ form.hidden_tag() }}
+          {{ form.username }}
+          {{ form.password }}
+          {{ form.submit }}
+      </form>
+    </main>
+</body>
+
 </html>
