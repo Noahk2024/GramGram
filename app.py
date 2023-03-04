@@ -10,10 +10,10 @@ import os
 
 db = SQLAlchemy()
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite://database.db'
-app.config['SECRET_KEY'] = 'temp'
+#bcrypt = Bcrypt(app)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+app.config['SECRET_KEY'] = 'thisisasecretkey'
 db.init_app(app)
-
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)

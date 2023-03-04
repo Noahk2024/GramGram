@@ -6,21 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/gramsheet.css">
-    <title>GramGram</title>
-
+    <title>Games</title>
     <header>
-        Welcome to GramGram!
+        Welcome to our Games!
     </header>
 </head>
 
 <body>
-    <p><a href="{{ url_for('signin') }}">SignIn</a></p>
-    <br>
-    <p><a href="{{ url_for('login') }}">Login</a></p>
-    <br>
-    <p><a href="{{ url_for('chat') }}">Chat</a></p>
-    <br>
-    <p><a href="{{url_for('games') }}">Games!</a></p>
+    <div>
+        <a href="{{url_for('bingo') }}">Play Bingo!</a>
+    </div>
 </body>
 
 </html>
