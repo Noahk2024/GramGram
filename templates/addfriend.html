@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="/static/styles.css" rel="stylesheet" type="text/css" />
+    <title>Add Friend</title>
+</head>
+
+<body>
+    <h1>Add Friend</h1>
+    {% if error %}
+    <p style="color:red">{{ error }}</p>
+    {% endif %} {% if success %}
+    <p style="color:green">{{ success }}</p>
+    {% endif %}
+    <form action="/add_friend" method="POST">
+        <label for="friend_id">Friend ID:</label>
+        <input type="text" id="friend_id" name="friend_id"><br><br>
+        <input type="submit" value="Add Friend">
+    </form>
+</body>
+
+</html>

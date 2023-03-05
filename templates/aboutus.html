@@ -3,36 +3,59 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
-    <header>
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="/static/styles.css" rel="stylesheet" type="text/css" />
+
+
+    <h2 class="section-heading text-uppercase">
         About Us
-    </header>
+    </h2>
 </head>
 
-<body>
-    <h1>Inspiration</h1>
+<body id="page-top">
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars ms-1"></i>
+                </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('home') }}">Back to Home Page</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('signup') }}">Sign Up</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('login') }}">Log In</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <h4>Inspiration</h4>
 
     <p>
         One of our group's grandparents suffered a lot of health problems during the pandemic and was very scared to go outside. As a result, she grew very lonely. This project is our way of trying to help people like her to make sure things like these never
         happen again.
     </p>
 
-    <h1>What it does</h1>
+    <h4>What it does</h4>
     <p>A quick, easy website that allows elderly people to talk and play with other elders and play games like Bingo. </p>
-    <h1> How we built it</h1>
+    <h4> How we built it</h4>
     <p>We built it using Javascript, Flask, CSS, and Python. We used VSCode to code. We used Javascript, Flask, and CSS to create the website back-end and front-end. We used Python to host our Flask server, which includes security such as sign-in, and we
         created a Domain (gramgram.social) for our website on Digital Ocean.
     </p>
-    <h1>Challenges we ran into</h1>
+    <h4>Challenges we ran into</h4>
     <p>We ran into a couple challenges setting up user id's and creating individual sessions for each user. </p>
-    <h1>Accomplishments that we're proud of</h1>
+    <h4>Accomplishments that we're proud of</h4>
     <p>We're proud of being able to set up a user interface that allows them to create their own accounts and functionally play games and talk with other accounts. We're happy of being able to combine different elements of our code like a messaging system
         with an id system to facilitate one-on-one conversations with other users. </p>
-    <h1>What we learned</h1>
+    <h4>What we learned</h4>
     <p>We learned about integrating different coding aspects of an assignment and blending them into one, cohesive project. We learned about some cool aspects of flask login and combing sql with flask to make our login interface. </p>
-    <h1>What's next for GramGram</h1>
+    <h4>What's next for GramGram</h4>
     <p>We're planning on adding in more games and features to GramGram. What's next on our mind is a chess game for people to play. We are additionally thinking about adding in a video chat feature.</p>
 
 </body>

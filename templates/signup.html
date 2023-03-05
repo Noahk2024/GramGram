@@ -4,45 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
-    <link href="static/styles.css" rel="stylesheet"/>
+    <title>Sign</title>
+    <link href="static/styles.css" rel="stylesheet" />
     <style>
         body {
             text-align: center;
             vertical-align: middle;
         }
-
     </style>
-    <script defer src="{ url_for('static', filename='js/signin-page.js') }"></script>
 </head>
 
 <body>
-    <main id="main-holder">
-        <h1 id="signin-header">Sign Up</h1>
 
-        <form method="POST" action="">
-            {{ form.hidden_tag() }}
-            <p>
-                <label for="user">
-                  <span>Username:</span>
-                </label>
-                <input type="text" id="user" name="username" />
-            </p>
-            <p>
-                <label for="pass">
-                  <span>Password:</span>
-                </label>
-                <input type="text" id="password" name="password" />
-            </p>
-            <p>
-                <label for="submit">
-                  <span>If you're happy with the display name and password you've chosen, please "Submit" below!</span>
-                </label>
+    {% block content %}
+    <h1>Sign Up</h1>
+    <form method="POST" action="">
+        {{ form.hidden_tag() }} {{ form.username.label }} {{ form.username }} <br> {{ form.password.label }} {{ form.password }} <br> {{ form.aboutme.label }} {{ form.aboutme }}<br> {{ form.fullname.label }} {{ form.fullname }} <br> {{ form.email.label
+        }} {{ form.email }} <br>
+        <input type="submit" value="Sign Up">
+    </form>
+    {% endblock %}
 
-                <button type="submit"> Submit </button>
-            </p>
-        </form>
-    </main>
 </body>
 
 </html>
