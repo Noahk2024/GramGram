@@ -34,9 +34,10 @@ th {
     text-align: center;
 }
 
-td.square.picked {
+td.square.picked, freeSquare.square.free {
     background-color: red;
 }
+
 
 
 /* Polymorphic styles */

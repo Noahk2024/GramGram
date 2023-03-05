@@ -60,6 +60,7 @@ function generateNumbers(table) {
 
     // Set "Free" square
     var freeSquare = table.rows[2].cells[2];
+
     freeSquare.innerHTML = "Free";
     freeSquare.className = "square free";
 

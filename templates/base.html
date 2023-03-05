@@ -5,19 +5,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/styles.css" rel="stylesheet" />
+    <style>
+        body {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+    </style>
     <title>Base</title>
 
 </head>
 
 <body>
     {% block content %}
+
     <h1>Hello, {{ name }}!</h1>
     {% endblock %}
 
-    <button>PlayBingo</button>
-    <button>Friends</button>
-    <button>Message</button>
-    <button>User Info</button>
+    
+
+    <button><a href="{{ url_for('games') }}">Games</a></button>
+    <button><a href="{{ url_for('friends') }}">Friends</a></button>
+    <button><a href="{{ url_for('chat') }}">Message</a></button>
+    <button><a href="{{ url_for('user_info') }}">User Info</a></button>
+    <button><a href="{{ url_for('logout') }}">Logout</a></button>
 
 </body>
 

@@ -5,16 +5,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/styles.css" rel="stylesheet"/>
+    <style>
+        body {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+    </style>
     <title>Login</title>
 </head>
 
 <body>
     <h1>Login Page</h1>
-
     <form method="POST" action="">
-        {{ form.hidden_tag() }} {{ form.username }} {{ form.password }} {{ form.submit }}
-    </form>
+        {{ form.hidden_tag() }}
+        <p>
+            <label for="user">
+              <span>Username:</span>
+            </label>
+            <input type="text" id="user" name="username" />
+        </p>
+        <p>
+            <label for="pass">
+              <span>Password:</span>
+            </label>
+            <input type="text" id="password" name="password" />
+        </p>
+        <p>
+            <label for="submit">
+              <span>If you have confirmed your user and password, click login!</span>
+            </label>
 
+            <button type="submit"> Login </button>
+        </p>
+    </form>
 </body>
 
 </html>

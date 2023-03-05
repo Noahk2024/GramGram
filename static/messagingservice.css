@@ -1,119 +1,143 @@
-/* Base styles */
-
-:root {
-    --primary-color: #0077c2;
-    --secondary-color: #ff8800;
-    --text-color: #333;
+* {
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    color: var(--text-color);
+    margin: 20px auto;
+    font-family: "Lato";
+    font-weight: 300;
 }
 
-h1 {
-    font-size: 2rem;
-    text-align: center;
-    margin: 1rem 0;
+form {
+    padding: 15px 25px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
 }
 
-table {
-    border-collapse: collapse;
-    margin: 0 auto;
+form label {
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
-th,
-td {
-    border: 1px solid var(--primary-color);
-    padding: 1rem;
+input {
+    font-family: "Lato";
 }
-
-th {
-    background-color: var(--primary-color);
-    color: #fff;
-    text-align: center;
-}
-
-td.square.picked {
-    background-color: red;
-}
-
-
-/* Polymorphic styles */
-
-
-/* Large table */
-
-.table--large th,
-.table--large td {
-    padding: 2rem;
-}
-
-.table--large th {
-    font-size: 3rem;
-}
-
-
-/* Small table */
-
-.table--small th,
-.table--small td {
-    padding: 0.5rem;
-}
-
-.table--small th {
-    font-size: 1rem;
-}
-
-
-/* Link */
 
 a {
-    color: var(--secondary-color);
+    color: #0000ff;
     text-decoration: none;
-    border-bottom: 1px dotted var(--secondary-color);
-    transition: border-color 0.2s ease;
 }
 
 a:hover {
-    border-color: transparent;
+    text-decoration: underline;
 }
 
-
-/* Reload button */
-
-#reloadLink {
-    display: inline-block;
-    margin: 1rem 0;
-    padding: 0.5rem 1rem;
-    border: 1px solid var(--secondary-color);
-    background-color: var(--secondary-color);
-    color: #fff;
-    border-radius: 5px;
-    transition: background-color 0.2s ease;
+#wrapper,
+#loginform {
+    margin: 0 auto;
+    padding-bottom: 25px;
+    background: #eee;
+    width: 600px;
+    max-width: 100%;
+    border: 2px solid #212121;
+    border-radius: 4px;
 }
 
-#reloadLink:hover {
-    background-color: transparent;
-    color: var(--secondary-color);
+#loginform {
+    padding-top: 18px;
+    text-align: center;
 }
 
-
-/* Back button */
-
-.back-button {
-    display: inline-block;
-    margin: 1rem 0;
-    padding: 0.5rem 1rem;
-    border: 1px solid var(--primary-color);
-    background-color: var(--primary-color);
-    color: #fff;
-    border-radius: 5px;
-    transition: background-color 0.2s ease;
+#loginform p {
+    padding: 15px 25px;
+    font-size: 1.4rem;
+    font-weight: bold;
 }
 
-.back-button:hover {
-    background-color: transparent;
-    color: var(--primary-color);
-    border-color: var(--primary-color);
+#chatbox {
+    text-align: left;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    padding: 10px;
+    background: #fff;
+    height: 300px;
+    width: 530px;
+    border: 1px solid #a7a7a7;
+    overflow: auto;
+    border-radius: 4px;
+    border-bottom: 4px solid #a7a7a7;
+}
+
+#usermsg {
+    flex: 1;
+    border-radius: 4px;
+    border: 1px solid #ff9800;
+}
+
+#name {
+    border-radius: 4px;
+    border: 1px solid #ff9800;
+    padding: 2px 8px;
+}
+
+#submitmsg,
+#enter {
+    background: #ff9800;
+    border: 2px solid #e65100;
+    color: white;
+    padding: 4px 10px;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.error {
+    color: #ff0000;
+}
+
+#menu {
+    padding: 15px 25px;
+    display: flex;
+}
+
+#menu p.welcome {
+    flex: 1;
+}
+
+a#exit {
+    color: white;
+    background: #c62828;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.msgln {
+    margin: 0 0 5px 0;
+}
+
+.msgln span.left-info {
+    color: orangered;
+}
+
+.msgln span.chat-time {
+    color: #666;
+    font-size: 60%;
+    vertical-align: super;
+}
+
+.msgln b.user-name,
+.msgln b.user-name-left {
+    font-weight: bold;
+    background: #546e7a;
+    color: white;
+    padding: 2px 4px;
+    font-size: 90%;
+    border-radius: 4px;
+    margin: 0 5px 0 0;
+}
+
+.msgln b.user-name-left {
+    background: orangered;
 }

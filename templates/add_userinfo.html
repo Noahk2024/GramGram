@@ -1,0 +1,37 @@
+<h1>Add User Information</h1>
+<form method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="full_name">Full Name</label>
+        <input type="text" class="form-control" name="full_name" required>
+    </div>
+    <br></br>
+    <div class="form-group">
+        <label for="bio">Bio</label>
+        <input type="text" class="form-control" name="bio">
+    </div>
+    <br></br>
+    <div class="form-group">
+        <label for="gender">Gender</label>
+        <select class="form-control" name="gender">
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+    </div>
+    <br></br>
+    <div class="form-group">
+        <label for="age">Age</label>
+        <input type="number" class="form-control" name="age">
+    </div>
+    <br></br>
+    <div class="form-group">
+        <label for="image">Image</label>
+        <input type="file" class="form-control-file" name="image">
+    </div>
+    <br></br>
+    <button type="submit" class="btn btn-primary"> Save </button>
+
+    <br></br>
+    <br></br>
+    <button><a href="{{ url_for('dashboard') }}"> Go Back </a></button>
+</form>
