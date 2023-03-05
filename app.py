@@ -70,19 +70,19 @@ def user_info():
     if 'username' not in session:
         return redirect(url_for('login'))
 
-    username = session['username']
+    #username = session['username']
 
-    conn = sqlite3.connect('database.db')
-    c = conn.cursor()
+    #conn = sqlite3.connect('database.db')
+    #c = conn.cursor()
 
     # Retrieve the user's information
-    c.execute("SELECT * FROM Users WHERE username=?", (username,))
-    user = c.fetchone()
+    #c.execute("SELECT * FROM Users WHERE username=?", (username,))
+    #user = c.fetchone()
 
     # Close the database connection
-    conn.close()
+    #conn.close()
 
-    return render_template('userinfo.html', user=user)
+    return render_template('userinfo.html', user=current_user)
 
 def get_db_connection():
     conn = sqlite3.connect('database.db')
@@ -163,7 +163,7 @@ def bingo():
 #    return render_template('messagingservice.html', name=current_user.username)
 
 @app.route('/dashboard')
-@login_required
+
 def dashboard():
     username = session['username']
 
@@ -203,13 +203,15 @@ class SignupForm(FlaskForm):
 #SIGN IN 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
+    global current_user
     form = SignupForm()
-    if request.method == 'POST' and form.validate_on_submit():
+    if request.method == 'POST':
         # process form data and save to database
         try:
             user = Users(username = form.username.data, password = form.password.data, fullname = form.fullname.data, aboutme = form.aboutme.data, email = form.email.data)
             db.session.add(user)
             db.session.commit()
+            current_user = user
             session['username'] = user.username # store username in Flask session
             return redirect(url_for('home'))
         
@@ -237,7 +239,7 @@ class LoginForm(FlaskForm):
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
-    if request.method == 'POST' and form.validate_on_submit():
+    if request.method == 'POST':
         # check if username and password are valid
         user = Users.query.filter_by(username=form.username.data).first()
         if user is None or user.password != form.password.data:
@@ -281,7 +283,7 @@ def get_user_details(user_id):
         return None
 
 @app.route("/dashboard/friends")
-@login_required
+
 def friends():
     # Get the user ID based on their username from the session
     

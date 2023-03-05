@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <link href="/static/styles.css" rel="stylesheet" type="text/css" />
+    <link href="/static/messagingservice.css" rel="stylesheet" type="text/css" />
     <title>User Info</title>
 </head>
 
@@ -12,12 +12,9 @@
     <p><strong>Name:</strong> {{ user.fullname }} </p>
     <p><strong>Username:</strong> {{ user.username }}</p>
     <p><strong>About Me:</strong> {{ user.aboutme }}</p>
+    <p><strong>Email:</strong> {{ user.email}} </p>
     <p><strong>Friends:</strong></p>
-    <ul>
-        {% for friend in friends %}
-        <li>{{ friend.name }}</li>
-        {% endfor %}
-    </ul>
+    
 </body>
 
 </html>
