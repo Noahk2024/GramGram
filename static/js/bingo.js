@@ -2,7 +2,7 @@ window.onload = function() {
     var table = document.getElementById("bingoTable");
     var reloadLink = document.getElementById("reloadLink");
 
-    var number=76;
+    var number = 76;
     var used = new Array(76);
     var digit1 = 0;
     var digit2 = 0;
@@ -73,4 +73,3 @@ function resetBoard(table) {
         table.deleteRow(0);
     }
 }
-
