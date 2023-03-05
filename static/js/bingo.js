@@ -2,6 +2,11 @@ window.onload = function() {
     var table = document.getElementById("bingoTable");
     var reloadLink = document.getElementById("reloadLink");
 
+    var number=76;
+    var used = new Array(76);
+    var digit1 = 0;
+    var digit2 = 0;
+
     // Set up click listener for reload link
     reloadLink.addEventListener("click", function(event) {
         event.preventDefault();
@@ -68,3 +73,4 @@ function resetBoard(table) {
         table.deleteRow(0);
     }
 }
+

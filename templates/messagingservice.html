@@ -3,31 +3,16 @@
 
 <head>
     <title>FacebookRipoff</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='bingo.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='messagingservice.css') }}">
 </head>
 
 <body>
-    <h1>Bingo!</h1>
-    <table>
-        <tr>
-            <th>B</th>
-            <th>I</th>
-            <th>N</th>
-            <th>G</th>
-            <th>O</th>
-        </tr>
-
-    </table>
-    <table id="bingoTable">
-        <thead>
-
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
-    <p><a id="reloadLink" href="#">Click here</a> to generate a new card</p>
+    <h1>Let's fuck with our friends</h1>
+    <label for="fname">To friend:</label>
+    <input type="text" id="fname" name="fname">
+    <button type="submit">Submit</button>
     <p><a href="{{ url_for('games') }}">Back to Games</a></p>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/bingo.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/messagingservice.js') }}"></script>
 </body>
 
 </html>
